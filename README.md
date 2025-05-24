@@ -32,3 +32,7 @@ Running the Producer and Consumer
 python3 producer/producer.py
 python3 consumer/consumer.py
 
+## Asciinema Demo
+
+Watch the demo here: [![asciicast](https://asciinema.org/a/tUaSfDcLC9HrMze34xr5IF4eM.svg)](https://asciinema.org/a/tUaSfDcLC9HrMze34xr5IF4eM)
+
