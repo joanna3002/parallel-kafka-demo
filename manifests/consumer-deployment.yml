@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kafka-consumer-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kafka-consumer
+  template:
+    metadata:
+      labels:
+        app: kafka-consumer
+    spec:
+      containers:
+      - name: kafka-consumer
+        image: your-kafka-consumer-image:latest
+        env:
+          - name: KAFKA_BROKER
+            value: "kafka-service:9092"
+          - name: TOPIC
+            value: "your-topic"
+        # Add command/args if needed to start your consumer app
+

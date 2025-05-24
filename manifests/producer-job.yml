@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: kafka-producer-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: kafka-producer
+        image: your-kafka-producer-image:latest
+        env:
+          - name: KAFKA_BROKER
+            value: "kafka-service:9092"
+          - name: TOPIC
+            value: "your-topic"
+        # command and args can be added here to run your producer script
+      restartPolicy: Never
+  backoffLimit: 4
+
